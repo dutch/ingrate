@@ -22,7 +22,7 @@
   ],
   "buildPresets": [
     {
-      "name": "ninja-debug",
+      "name": "debug",
       "configurePreset": "default",
       "displayName": "Build (Debug)",
       "description": "Build with Ninja (Debug)",

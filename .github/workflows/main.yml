@@ -2,7 +2,12 @@ name: Main
 on: [push]
 jobs:
   Build:
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        os:
+          - windows
+          - ubuntu
+    runs-on: ${{ matrix.os }}-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -16,9 +21,4 @@ jobs:
         uses: lukka/run-cmake@v10
         with:
           configurePreset: default
-          buildPreset: ninja-debug
-      - name: Upload application
-        uses: actions/upload-artifact@v3
-        with:
-          name: application
-          path: ingrate/build/ingrate.exe
+          buildPreset: debug
