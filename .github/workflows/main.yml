@@ -18,7 +18,7 @@ jobs:
       - name: Run vcpkg
         uses: lukka/run-vcpkg@v11
       - if: ${{ matrix.os }} == 'ubuntu'
-        run: apt-get -qq install libxrandr-dev
+        run: sudo apt-get -qq install libxrandr-dev
       - name: Run CMake
         uses: lukka/run-cmake@v10
         with:
