@@ -9,7 +9,7 @@
     {
       "name": "default",
       "displayName": "Default Config",
-      "description": "Default build using Ninja generator",
+      "description": "Default configuration using Ninja generator",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
@@ -18,6 +18,15 @@
           "value": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake"
         }
       }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "ninja-debug",
+      "configurePreset": "default",
+      "displayName": "Build (Debug)",
+      "description": "Build with Ninja (Debug)",
+      "configuration": "Debug"
     }
   ]
 }
