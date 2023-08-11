@@ -17,3 +17,8 @@ jobs:
         with:
           configurePreset: default
           buildPreset: ninja-debug
+      - name: Upload application
+        uses: actions/upload-artifact@v3
+        with:
+          name: application
+          path: ingrate.exe
