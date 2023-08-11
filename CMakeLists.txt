@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
 project(ingrate)
 find_package(glfw3 CONFIG REQUIRED)
-add_executable(ingrate ingrate.cpp ingrate.manifest)
+add_executable(ingrate ingrate.cpp ingrate.manifest ingrate.rc)
 target_link_libraries(ingrate PRIVATE glfw)
