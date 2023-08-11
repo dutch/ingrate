@@ -18,7 +18,15 @@ jobs:
       - name: Run vcpkg
         uses: lukka/run-vcpkg@v11
       - if: ${{ matrix.os }} == 'ubuntu'
-        run: sudo apt-get -qq install libxrandr-dev
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          version: 1.0
+          packages: >-
+            libxinerama-dev
+            libxcursor-dev
+            xorg-dev
+            libglu1-mesa-dev
+            pkg-config
       - name: Run CMake
         uses: lukka/run-cmake@v10
         with:
