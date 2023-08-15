@@ -17,7 +17,8 @@ jobs:
         uses: lukka/get-cmake@latest
       - name: Run vcpkg
         uses: lukka/run-vcpkg@v11
-      - if: ${{ matrix.os }} == 'ubuntu'
+      - if: ${{ matrix.os == 'ubuntu' }}
+        name: Install Linux packages
         uses: awalsh128/cache-apt-pkgs-action@v1
         with:
           version: 1.0
